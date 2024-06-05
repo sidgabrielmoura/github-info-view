@@ -27,7 +27,7 @@ export const GithunAuthOptions: AuthOptions = {
             return token
         },
         async session({session, token}: {session: Session, token: JWT }){
-            session.user.githubProfile = token.githubProfile
+            session.user.githubProfile = token.githubProfile as GithubProfile
             return session
         }
     }
